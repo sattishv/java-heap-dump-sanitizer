@@ -1,19 +1,23 @@
 # Java Heap Dump Sanitizer
 
-Java Heap Dump Sanitizer is a tool for clearing sensitive data from Java heap dumps. <br>
-This is done by replacing byte and char array contents in the heap dump file with zero<br>
-values. Heap dump can then be analyzed with any tool. <br>
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.java-heap-dump-sanitizer/java-heap-dump-sanitizer/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.java-heap-dump-sanitizer/java-heap-dump-sanitizer)
+![Java CI](https://github.com/java-heap-dump-sanitizer/java-heap-dump-sanitizer/workflows/Java%20CI/badge.svg)
 
-Typical scenario is when a head dump needs to be sanitized before it can be given to <br>
-another person or moved to a different environment. For example, a program running in<br>
-production environment may contain sensitive data (passwords, credit card data, etc) <br>
-which should not be viewable when the heap dump is copied to a development enviroment <br>
-for analysis.
+Java Heap Dump Sanitizer is a tool for clearing sensitive data from Java heap dumps. This is done by replacing byte and
+char array contents in the heap dump file with zero values. Heap dump can then be analyzed with any tool.
+
+Typical scenario is when a head dump needs to be sanitized before it can be given to another person or moved to a different
+environment. For example, a program running in production environment may contain sensitive data (passwords, credit card
+data, etc) which should not be viewable when the heap dump is copied to a development environment for analysis.
 
 ## Example
 
 ```
-java -jar sanitizer-jar-with-dependencies.jar input-heap-dump.hprof output-heap-dump.hprof
+# download jar-with-dependencies file
+$ wget -O sanitizer.jar 'https://search.maven.org/remote_content?g=com.github.java-heap-dump-sanitizer&a=java-heap-dump-sanitizer&v=LATEST&c=jar-with-dependencies'
+
+# run the tool
+$ java -jar sanitizer.jar input-heap-dump.hprof output-heap-dump.hprof
 ```
 
 ## Usage
@@ -36,10 +40,10 @@ Sanitize a Java heap dump by replacing byte or char array contents
 ```
 
 Note that inputFile and outputFile arguments may be file paths or standard streams. <br>
-For example, the following command reads heap dump from stdin and outputs to stdout:
+For example, the following command reads heap dump from stdin and outputs sanitized dump to stdout:
 
 ```
-cat input-heap-dump.hprof | java -jar sanitizer-jar-with-dependencies.jar stdin stdout 
+$ cat input-heap-dump.hprof | java -jar sanitizer.jar stdin stdout
 ```
 
 
