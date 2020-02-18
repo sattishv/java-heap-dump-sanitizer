@@ -4,7 +4,7 @@
 
 	<groupId>com.github.java-heap-dump-sanitizer</groupId>
 	<artifactId>java-heap-dump-sanitizer</artifactId>
-	<version>1.0.0-M1</version>
+	<version>1.0.0-SNAPSHOT</version>
 
 	<name>java-heap-dump-sanitizer</name>
 	<description>
@@ -37,7 +37,7 @@
 		<connection>scm:git:git://github.com/java-heap-dump-sanitizer/java-heap-dump-sanitizer.git</connection>
 		<developerConnection>scm:git:https://github.com/java-heap-dump-sanitizer/java-heap-dump-sanitizer.git</developerConnection>
 		<url>http://github.com/java-heap-dump-sanitizer/java-heap-dump-sanitizer/tree/master</url>
-		<tag>java-heap-dump-sanitizer-1.0.0-M1</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<developers>
